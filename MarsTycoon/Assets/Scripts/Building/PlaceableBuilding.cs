@@ -12,7 +12,7 @@ public class PlaceableBuilding : MonoBehaviour
 	{
 		if (isSelected)
 		{
-			GUI.Button(new Rect(100, 200, 100, 30), name);
+			GUI.Button(new Rect(Screen.width/2, Screen.height/15, 100, 30), name);
 		}
 	}
 
