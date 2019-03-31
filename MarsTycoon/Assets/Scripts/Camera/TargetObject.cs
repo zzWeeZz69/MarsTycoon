@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -34,7 +34,7 @@ public class TargetObject : MonoBehaviour
     }
     void PlaceBuilding()
     {
-        if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
@@ -61,9 +61,6 @@ public class TargetObject : MonoBehaviour
                 if (Physics.Raycast(ray, out raycast, ClickableLayer))
                 {
                     ClickOn ClickOnScript = raycast.collider.GetComponent<ClickOn>();
-
-
-
                     if (raycast.collider.gameObject)
                     {
                         if (raycast.collider.name == "Plane")
@@ -76,18 +73,12 @@ public class TargetObject : MonoBehaviour
                             ClickOnScript.ClickMe();
                         }
                     }
-
-
-                    
-
                 }
                 else
                 {
                     Debug.Log("ehju");
                 }
             }
-
-
         }
     }
 }
