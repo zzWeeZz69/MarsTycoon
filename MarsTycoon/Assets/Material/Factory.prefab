@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 618134123085056634}
   - component: {fileID: 618134123085056630}
   - component: {fileID: 2210629567522460147}
+  - component: {fileID: 6584605321351953803}
   m_Layer: 9
   m_Name: Factory
   m_TagString: Building
@@ -122,3 +123,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: []
+--- !u!114 &6584605321351953803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618134123085056633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea54ef62a35da114496f42b09a6ef516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

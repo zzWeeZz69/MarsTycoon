@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Building\BuildingManager.cs" />
     <Compile Include="Assets\Scripts\Building\BuildingPlacment.cs" />
     <Compile Include="Assets\Scripts\Building\ClickOn.cs" />
+    <Compile Include="Assets\Scripts\Building\Factory\FactoryController.cs" />
     <Compile Include="Assets\Scripts\Building\PlaceableBuilding.cs" />
     <Compile Include="Assets\Scripts\Building\SelectedObject.cs" />
     <Compile Include="Assets\Scripts\Camera\RTS_Camera.cs" />
