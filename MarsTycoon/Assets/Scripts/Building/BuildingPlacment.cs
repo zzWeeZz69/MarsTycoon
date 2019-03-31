@@ -6,9 +6,26 @@ public class BuildingPlacment : MonoBehaviour
 {
 	PlaceableBuilding PlaceableBuilding;
 	private Transform currentBuilding;
+	public LayerMask buildingMask;
 	bool hasPlaced;
-	public LayerMask layerMask;
+	
 	Camera Camera;
+
+	PlaceableBuilding PlaceableBuildingOLD;
+
+	float ScaleY()
+	{
+		float ZeroY = 0f;
+		float TrueY = currentBuilding.localScale.y;
+		if(currentBuilding.localScale.y < 1)
+		{
+			return ZeroY;
+		}
+		else
+		{
+			return TrueY / 2;
+		}
+	}
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -18,32 +35,55 @@ public class BuildingPlacment : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		Vector3 m = Input.mousePosition;
+		m = new Vector3(m.x, m.y, transform.position.y);
+		Vector3 p = Camera.ScreenToWorldPoint(m);
+
 		if (currentBuilding != null && !hasPlaced)
 		{
-			Vector3 m = Input.mousePosition;
-			m = new Vector3(m.x, m.y, transform.position.y);
-			Vector3 p = Camera.ScreenToWorldPoint(m);
-			currentBuilding.position = new Vector3(p.x, 0, p.z);
+			RaycastHit hit;
+			Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
+			var raycast = Physics.Raycast(ray, out hit);
+			currentBuilding.position = new Vector3(hit.point.x, ScaleY(), hit.point.z);
 			if (Input.GetMouseButtonDown(0))
 			{
-				if (IsLegalPositon())
+				
+				if (raycast)
 				{
-					hasPlaced = true;
+					if (IsLegalPositon())
+					{
+						hasPlaced = true;
+					}
 				}
 			}
 		}
 		else
 		{
+			// shoot a raycast to see what object it hits
 			if (Input.GetMouseButtonDown(0))
 			{
+				RaycastHit hit = new RaycastHit();
+				Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
+				if (Physics.Raycast(ray, out hit, Mathf.Infinity, buildingMask))
+				{
 
+					hit.collider.gameObject.GetComponent<PlaceableBuilding>().setSelected(true);
+					PlaceableBuildingOLD = hit.collider.gameObject.GetComponent<PlaceableBuilding>();
+				}
+				else
+				{
+					if (PlaceableBuildingOLD != null)
+					{
+						PlaceableBuildingOLD.setSelected(false);
+					}
+				}
 			}
 		}
 	}
 
 	bool IsLegalPositon()
 	{
-		if(PlaceableBuilding.colliders.Count > 0)
+		if (PlaceableBuilding.colliders.Count > 0)
 		{
 			return false;
 		}

@@ -6,6 +6,15 @@ public class PlaceableBuilding : MonoBehaviour
 {
 	[HideInInspector]
 	public List<Collider> colliders = new List<Collider>();
+	bool isSelected;
+
+	private void OnGUI()
+	{
+		if (isSelected)
+		{
+			GUI.Button(new Rect(100, 200, 100, 30), name);
+		}
+	}
 
 	private void OnTriggerEnter(Collider other)
 	{
@@ -21,5 +30,10 @@ public class PlaceableBuilding : MonoBehaviour
 		{
 			colliders.Remove(other);
 		}
+	}
+
+	public void setSelected(bool s)
+	{
+		isSelected = s;
 	}
 }
