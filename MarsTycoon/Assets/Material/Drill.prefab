@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7718284910583010537}
   - component: {fileID: 6251824292298011771}
   - component: {fileID: 1657975611330898793}
+  - component: {fileID: 1079755486055406268}
   m_Layer: 9
   m_Name: Drill
   m_TagString: Building
@@ -91,7 +92,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3, y: 1, z: 1.1}
+  m_Size: {x: 1.2, y: 1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6251824292298011771
 Rigidbody:
@@ -122,3 +123,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: []
+--- !u!114 &1079755486055406268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862328404294307164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00952860f774b64bacff7d55260cf87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CopperOnTick: 4
+  MetalOnTick: 4

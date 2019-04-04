@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 using UnityEditor;
 
@@ -81,7 +81,6 @@ namespace RTS_Cam
             }
 
             GUILayout.Label("Follow target", EditorStyles.boldLabel);
-            camera.targetFollow = EditorGUILayout.ObjectField("Target to follow: ", camera.targetFollow, typeof(Transform)) as Transform;
             camera.targetOffset = EditorGUILayout.Vector3Field("Target offset: ", camera.targetOffset);
             camera.followingSpeed = EditorGUILayout.FloatField("Following speed: ", camera.followingSpeed);
         }

@@ -7,7 +7,8 @@ public class BuildingPlacment : MonoBehaviour
 	PlaceableBuilding PlaceableBuilding;
 	private Transform currentBuilding;
 	public LayerMask buildingMask;
-	bool hasPlaced;
+	[HideInInspector]
+	public bool hasPlaced;
 	
 	Camera Camera;
 

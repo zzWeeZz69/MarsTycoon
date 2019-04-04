@@ -11,6 +11,8 @@ public class GameHandler : MonoBehaviour
 	[Header("Energy")]
 	public int Energy;
 	public int MaxEnergy;
+	[Header("Tick Stuff")]
+	public float waitForDrill;
 
 	void Start()
 	{
@@ -22,6 +24,5 @@ public class GameHandler : MonoBehaviour
 		{
 			Energy = MaxEnergy;
 		}
-
 	}
 }
