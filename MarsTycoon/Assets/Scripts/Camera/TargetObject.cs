@@ -76,7 +76,7 @@ public class TargetObject : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("ehju");
+                    Debug.Log("didn't hit anything");
                 }
             }
         }

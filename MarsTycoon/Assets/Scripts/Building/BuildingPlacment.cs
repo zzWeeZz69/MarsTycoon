@@ -14,6 +14,10 @@ public class BuildingPlacment : MonoBehaviour
 
 	PlaceableBuilding PlaceableBuildingOLD;
 
+	float RotationY()
+	{
+		return currentBuilding.localRotation.y;
+	}
 	float ScaleY()
 	{
 		float ZeroY = 0f;
@@ -46,6 +50,10 @@ public class BuildingPlacment : MonoBehaviour
 			Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
 			var raycast = Physics.Raycast(ray, out hit);
 			currentBuilding.position = new Vector3(hit.point.x, ScaleY(), hit.point.z);
+			if (Input.GetKeyDown(KeyCode.R))
+			{
+				currentBuilding.Rotate(0, RotationY() + 45, 0);
+			}
 			if (Input.GetMouseButtonDown(0))
 			{
 				

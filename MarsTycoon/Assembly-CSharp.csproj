@@ -60,13 +60,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Drillcontroller.cs" />
+    <Compile Include="Assets\EventController.cs" />
     <Compile Include="Assets\Material\RTS_Camera\Demo\DemoScene.cs" />
     <Compile Include="Assets\Material\RTS_Camera\Demo\TargetSelector.cs" />
     <Compile Include="Assets\Scripts\Building\BuildingHolder.cs" />
     <Compile Include="Assets\Scripts\Building\BuildingManager.cs" />
     <Compile Include="Assets\Scripts\Building\BuildingPlacment.cs" />
     <Compile Include="Assets\Scripts\Building\ClickOn.cs" />
+    <Compile Include="Assets\Scripts\Building\Drillcontroller.cs" />
     <Compile Include="Assets\Scripts\Building\Factory\FactoryController.cs" />
     <Compile Include="Assets\Scripts\Building\PlaceableBuilding.cs" />
     <Compile Include="Assets\Scripts\Building\SelectedObject.cs" />
